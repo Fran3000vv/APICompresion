@@ -4,7 +4,6 @@ import mysql.connector as mysql
 import secrets
 from PyPDF2 import PdfReader, PdfWriter
 import os
-import base64
 application=Flask(__name__)
 CORS(application)
 
