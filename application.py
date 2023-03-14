@@ -100,9 +100,4 @@ def returning_compressed_pdf(token):
         return jsonify({"error":"That provided token hasn't a linked file"}),400
     with open(route, 'rb') as f:
         file_content = f.read()
-
-    # codificar el archivo en base64
-    encoded_content = base64.b64encode(file_content)
-
-    # agregar el archivo como un parámetro de consulta en la URL
     return send_file(route, as_attachment=True, download_name='compressed_file.pdf'),200
